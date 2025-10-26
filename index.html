@@ -118,11 +118,13 @@ Let’s write our story again, this time with more laughter, more patience, and 
 
   <script>
     const audio = document.getElementById('song');
-    audio.addEventListener('loadedmetadata', () => {
-      audio.currentTime = 120; // 2 minutes = 120 seconds
-      audio.play();
-    });
-    });
+
+      // Ensure song always starts from 2:00
+      audio.addEventListener('play', () => {
+        if (audio.currentTime < 120) {
+          audio.currentTime = 120; // jump to 2:00
+        }
+      });
 
     function sendApology() {
       for (let i = 0; i < 20; i++) {
