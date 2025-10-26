@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I'm Sorry, Koushani ❤️</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600&family=Poppins:wght@400;600&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', 'Noto Serif Bengali', serif;
+      background: url('background.png') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      width: 90%;
+      max-width: 420px;
+      box-shadow: 0 0 30px rgba(255,255,255,0.2);
+      animation: fadeIn 2s ease;
+    }
+    h1 {
+      font-size: 2em;
+      color: #ffb3c6;
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: #ffe6f0;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.1em;
+      color: #f8d7e2;
+      line-height: 1.6;
+    }
+    button {
+      background: #ff4d6d;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      color: #fff;
+      font-size: 1em;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #e63e5f;
+      transform: scale(1.05);
+    }
+    audio {
+      margin-top: 20px;
+      width: 100%;
+      border-radius: 10px;
+      outline: none;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .heart {
+      position: absolute;
+      bottom: 0;
+      font-size: 18px;
+      color: #ff7aa2;
+      animation: floatUp 6s linear infinite;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="container">
+    <h1>I'm Sorry ❤️</h1>
+    <h2>Dear Koushani</h2>
+    <p>
+      I’m sorry — not just for the mistake, but for every moment I made you feel less than you deserve.
+You are a poem I’m still learning to read with care, and I promise I’ll do better — to listen deeper, hold you softer, and love you louder.
+
+I’ll make sure you never have to question your worth in my world.
+I’ll take care of you, protect your smile, and fill your days with the kind of warmth you bring into mine.
+
+Let’s write our story again, this time with more laughter, more patience, and a little extra magic in every moment. 🌷💫  
+      <br><br>
+      Can we start again, with the same love and warmth? 💞
+    </p>
+    <button onclick="sendApology()">Forgive Anindya....</button>
+
+    <!-- Play your local MP3 -->
+        
+     <p>One Song for youuuu....</p>
+    <audio id="song" controls>
+      <source src="phaka_frame.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <script>
+    const audio = document.getElementById('song');
+    audio.addEventListener('play', () => {
+      if (audio.currentTime < 120) {
+        audio.currentTime = 120; // Start from 2:00 mark
+      }
+    });
+
+    function sendApology() {
+      for (let i = 0; i < 20; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.textContent = '💖';
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.animationDelay = Math.random() * 5 + 's';
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 6000);
+      }
+      alert('Koushani, please please please please.....forgive meeeeeeee...... 💖');
+    }
+  </script>
+</body>
+</html>
