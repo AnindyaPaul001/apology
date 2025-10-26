@@ -121,6 +121,7 @@ Let’s write our story again, this time with more laughter, more patience, and 
     audio.addEventListener('play', () => {
       if (audio.currentTime < 120) {
         audio.currentTime = 120; // Start from 2:00 mark
+        audio.play();
       }
     });
 
