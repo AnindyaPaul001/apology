@@ -109,7 +109,7 @@ Let’s write our story again, this time with more laughter, more patience, and 
 
     <!-- Play your local MP3 -->
         
-     <p>One Song for youuuu....</p>
+     <p>One Song only for youuuu....</p>
     <audio id="song" controls>
       <source src="phaka_frame.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
@@ -119,12 +119,13 @@ Let’s write our story again, this time with more laughter, more patience, and 
   <script>
     const audio = document.getElementById('song');
 
-      // Ensure song always starts from 2:00
-      audio.addEventListener('play', () => {
-        if (audio.currentTime < 120) {
-          audio.currentTime = 120; // jump to 2:00
-        }
-      });
+audio.addEventListener('play', () => {
+  if (audio.currentTime < 120) {
+    audio.pause();          // pause immediately
+    audio.currentTime = 120; // jump to 2:00
+    audio.play();           // resume play
+  }
+});
 
     function sendApology() {
       for (let i = 0; i < 20; i++) {
