@@ -119,11 +119,10 @@ Let’s write our story again, this time with more laughter, more patience, and 
   <script>
     const audio = document.getElementById('song');
 
+// Ensure song always starts from 2:00
 audio.addEventListener('play', () => {
-  if (audio.currentTime < 120) {
-    audio.pause();          // pause immediately
-    audio.currentTime = 120; // jump to 2:00
-    audio.play();           // resume play
+  if (audio.currentTime < 121) {
+    audio.currentTime = 121; // jump to 2:00
   }
 });
 
